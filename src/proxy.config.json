@@ -1,0 +1,7 @@
+{
+  "/jokes": {
+    "target": "https://api.chucknorris.io",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

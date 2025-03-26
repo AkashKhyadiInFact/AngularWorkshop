@@ -1,0 +1,7 @@
+{
+    "github.copilot.chat.codeGeneration.instructions":[
+    {
+        "file":".github/angular19-instructuons.md",
+    }],
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+}

@@ -1,0 +1,19 @@
+<ul>
+    @for (todo of todos(); track $index) {
+        <li>
+            <input type="checkbox" [(ngModel)]="todo.done"(change)="doneChanged($event)"/>
+
+            <span [ngClass]="doneStyle(todo)" (click)="editTodo(todo)" 
+            (keyup)="editTodo(todo)" 
+            tabindex="0">
+            {{todo.text}} ({{todo.priority}})
+        </span>
+            
+            <button (click)="removeTodo(todo)">❌</button>
+
+        </li>
+    } 
+    @empty {
+        <li>Keine Todos vorhanden</li>
+    }
+</ul>

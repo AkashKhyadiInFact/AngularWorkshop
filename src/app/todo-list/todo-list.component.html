@@ -1,0 +1,39 @@
+<!-- The div was changed to form as to let the focus get back to the text box after a value is entered -->
+@if(isEditMode) {
+    <form (ngSubmit)="updateTodo()">
+        <h3>Update Todo:</h3>
+        <input type="text" name="todoInput" [(ngModel)]="todoText" appFocus>
+    
+        <select name="priority" [(ngModel)]="priority">
+            @for (priority of priorities; track $index) {
+                <option [value]="priority">{{priority}}</option>
+            }
+        </select>
+    
+        <button [disabled]="todoText.length === 0">OK</button>
+    </form> 
+ 
+}
+@else {
+    <form (ngSubmit)="addTodo()">
+        <h3>Neue Todo:</h3>
+        <input type="text" name="todoInput" [(ngModel)]="todoText" appFocus>
+    
+        <select name="priority" [(ngModel)]="priority">
+            @for (priority of priorities; track $index) {
+                <option [value]="priority">{{priority}}</option>
+            }
+        </select>
+    
+        <button [disabled]="todoText.length === 0">OK</button>
+    </form>  
+}
+
+
+<app-listbox [todos]="todos"
+             (removeTodoClick)="removeTodo($event)" (editTodoClick)="editTodo($event)" (todoDoneChanged)="todoDone()">
+            </app-listbox>
+
+<h3>{{jokeText}}</h3>
+
+<button (click)="goToAboutMePage()">Go to About Me</button>
