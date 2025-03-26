@@ -24,7 +24,7 @@ export class TodoListComponent {
   router = inject(Router);
 
   goToAboutMePage(){
-    this.router.navigate(['about']);
+    this.router.navigate(['about','Akash']);
   }
 
   todoDone(){
